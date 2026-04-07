@@ -10,7 +10,7 @@ class LinkdList2 {
         }
     }
 
-    //add - first, last
+    //add - first
     public void addFirst(String data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -22,8 +22,25 @@ class LinkdList2 {
         head = newNode;
     }
 
+    //add - last
+    public void addLast(String data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+
+        Node currNode = head;
+        while (currNode.next != null) {
+            currNode = currNode.next;            
+        }
+
+        currNode.next = newNode;
+    }
     public static void main(String[] args) {
         LinkdList2 list = new LinkdList2();
+        list.addFirst("a");
+        list.addFirst("is");
 
     }
 }
