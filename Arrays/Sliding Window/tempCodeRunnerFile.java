@@ -1,1 +1,1 @@
-printFirstNegative
+a

@@ -1,0 +1,42 @@
+public class MaxVowelsSubstring {
+    public static boolean isVowel(char c) {
+    c = Character.toLowerCase(c);
+    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+
+    public static int maxVowels(String s, int k) {
+        if (s == null || s.length() == 0 || k > s.length()) {
+            return 0;
+        }
+
+        int count = 0;
+        for (int i = 0; i < k; i++) {
+            if (isVowel(s.charAt(i))) {
+                count++;
+            }
+        }
+
+        int mCount = count;
+
+        for (int i = k; i < s.length(); i++) {
+            if (isVowel(s.charAt(i))) {
+                count++;
+            }
+
+            if (isVowel(s.charAt(i - k))) {
+                count--;
+            }
+
+            mCount = Math.max(mCount, count); 
+        }
+
+        return mCount;
+    }
+
+    public static void main(String[] args) {
+        String s = "abciiidef";
+        int k = 3;
+
+        System.out.println(maxVowels(s, k));
+    }
+}
