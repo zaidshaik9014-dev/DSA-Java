@@ -1,7 +1,7 @@
 public class MaxVowelsSubstring {
     public static boolean isVowel(char c) {
-    c = Character.toLowerCase(c);
-    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    return c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||
+           c=='A'||c=='E'||c=='I'||c=='O'||c=='U';
     }
 
     public static int maxVowels(String s, int k) {
