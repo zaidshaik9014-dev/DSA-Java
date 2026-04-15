@@ -1,3 +1,5 @@
+//1. Find the smallest element in the unsorted part and put it in the correct position.
+//2. Repeat this for each position from left to right until sorted.
 public class SelectionSort {
 
     public static void selectionSort(int[] a) {
