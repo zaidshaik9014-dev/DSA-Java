@@ -1,5 +1,5 @@
 //1. Compare adjacent elements and swap if they’re in the wrong order.
-//2. Repeat passes so the largest elements “bubble up” to the end each time.
+//2. Repeat passes so the largest elements “bubble up” to the end each time. 
 public class BubbleSort {
 
     public static void bubbleSort(int[] arr) {
