@@ -18,12 +18,12 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {5, 2, 9, 1, 5, 6};
+        int[] a = {5, 2, 9, 1, 5, 6};
 
-        bubbleSort(arr);
+        bubbleSort(a);
 
         System.out.println("Sorted array:");
-        for (int num : arr) {
+        for (int num : a) {
             System.out.print(num + " ");
         }
     }
