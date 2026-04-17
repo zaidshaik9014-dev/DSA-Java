@@ -3,7 +3,7 @@ public class FirstNegativeNoQueue {
         for (int i = 0; i <= a.length - k; i++) {
             boolean found = false;
 
-            for (int j = i; j < i + k; j++) {
+            for (int j = i; j < i + k; j++) { //i + k --> for sliding thw window
                 if (a[j] < 0) {
                     System.out.print(a[j] + " ");
                     found = true;
