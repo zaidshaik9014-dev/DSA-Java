@@ -1,27 +1,18 @@
-class MinValToGetPositive {
-//1413. Minimum Value to Get Positive Step by Step Sum
-    public int minStartValue(int[] nums) {
-        int sum = 0;
-        int minSum = 0;
+public class MinValToGetPositive {
+    public static int minStartValue(int[] nums) {
+        int sum = 0, minSum = 0;
 
-        // Step 1: find minimum prefix sum
-        for (int i = 0; i < nums.length; i++) {
-            sum += nums[i];
+        for (int num : nums) {
+            sum += num;
             minSum = Math.min(minSum, sum);
         }
 
-        // Step 2: calculate required start value
         return 1 - minSum;
     }
 
-    // Example usage
     public static void main(String[] args) {
-        MinValToGetPositive sol = new MinValToGetPositive();
-
         int[] nums = {-3, 2, -3, 4, 2};
 
-        int result = sol.minStartValue(nums);
-
-        System.out.println("Minimum Start Value: " + result);
+        System.out.println(minStartValue(nums));
     }
 }

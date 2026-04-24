@@ -1,40 +1,26 @@
-import java.util.*;
-
 public class MaxScore {
-//max Score after splitting a string
     public static int maxScore(String s) {
-        int totalOnes = 0;
+        int ones = 0;
 
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '1') {
-                totalOnes++;
-            }
+        for (char c : s.toCharArray()) {
+            if (c == '1') ones++;
         }
 
-        int zeros = 0;
-        int ones = totalOnes;
-        int maxScore = 0;
+        int zeros = 0, max = 0;
 
         for (int i = 0; i < s.length() - 1; i++) {
-            if (s.charAt(i) == '0') {
-                zeros++;
-            } else {
-                ones--;
-            }
+            if (s.charAt(i) == '0') zeros++;
+            else ones--;
 
-            maxScore = Math.max(maxScore, zeros + ones);
+            max = Math.max(max, zeros + ones);
         }
 
-        return maxScore;
+        return max;
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-//for ex give 011101
-        String s = sc.next();
+        String s = "011101";
 
         System.out.println(maxScore(s));
-
-        sc.close();
     }
 }

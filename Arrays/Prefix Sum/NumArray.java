@@ -1,32 +1,24 @@
-class NumArray {
+public class NumArray {
     int[] prefix;
-    //step-1: Build prefix array
+
     public NumArray(int[] nums) {
-        int n = nums.length;
-        prefix = new int[n];
+        prefix = new int[nums.length + 1];
 
-        prefix[0] = nums[0];
-
-        for (int i = 1; i < n; i++) {
-            prefix[i] = prefix[i - 1] + nums[i];
+        for (int i = 0; i < nums.length; i++) {
+            prefix[i + 1] = prefix[i] + nums[i];
         }
     }
 
-    // Step 2: Answer query
     public int sumRange(int left, int right) {
-        if (left == 0) {
-            return prefix[right];
-        }
-        return prefix[right] - prefix[left - 1];
+        return prefix[right + 1] - prefix[left];
     }
 
-     // Example usage
     public static void main(String[] args) {
-        int[] nums = {2, 4, 1, 7, 3};
+        int[] nums = {-2, 0, 3, -5, 2, -1};
 
         NumArray obj = new NumArray(nums);
 
-        System.out.println(obj.sumRange(1, 3)); // 12
-        System.out.println(obj.sumRange(0, 4)); // 17
+        System.out.println(obj.sumRange(0, 2)); // 1
+        System.out.println(obj.sumRange(2, 5)); // -1
     }
 }
