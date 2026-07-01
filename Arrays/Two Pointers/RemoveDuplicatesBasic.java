@@ -13,7 +13,7 @@ public class RemoveDuplicatesBasic {
         return left + 1;
     }
     public static void main(String[] args) {
-        int[] arr = {1, 1, 2, 2, 3};
+        int[] arr = {1, 1, 1, 2, 2, 3};
 
         int len = removeDuplicates(arr);
 
