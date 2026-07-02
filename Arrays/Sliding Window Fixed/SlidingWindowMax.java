@@ -4,7 +4,7 @@ public class SlidingWindowMax {
         int[] result = new int[n - k + 1];
 
         int idx = 0;
-        for (int i = 0; i < n - k; i++) {
+        for (int i = 0; i <= n - k; i++) {
             int max = nums[i];
             
             for (int j = i; j < i + k; j++) {
